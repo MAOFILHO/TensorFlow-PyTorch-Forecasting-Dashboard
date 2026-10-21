@@ -1,7 +1,7 @@
 # TensorFlow vs. PyTorch: Forecasting Dashboard
 ### Bombay Surface Temperature, 1970–2012
 
-[![CI](https://github.com/MAOFILHO/Portfolio-Projects/actions/workflows/tensorflow-pytorch-forecasting-dashboard-ci.yml/badge.svg)](https://github.com/MAOFILHO/Portfolio-Projects/actions/workflows/tensorflow-pytorch-forecasting-dashboard-ci.yml)
+[![CI](https://github.com/MAOFILHO/TensorFlow-PyTorch-Forecasting-Dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/MAOFILHO/TensorFlow-PyTorch-Forecasting-Dashboard/actions/workflows/ci.yml)
 
 An interactive full-stack showcase of time-series forecasting with
 **statistical models (ARIMA/SARIMAX)** and **LSTM neural networks in both
@@ -152,7 +152,7 @@ tensorflow-pytorch-forecasting-dashboard/
 │
 ├── .github/
 │   └── workflows/
-│       └── tensorflow-pytorch-forecasting-dashboard-ci.yml
+│       └── ci.yml
 │
 └── README.md
 ```
@@ -256,8 +256,8 @@ have run, or **Learn: PyTorch vs. TensorFlow** any time.
 
 ### 6. Continuous Integration (CI) GitHub Actions
 
-[`tensorflow-pytorch-forecasting-dashboard-ci.yml`](../.github/workflows/tensorflow-pytorch-forecasting-dashboard-ci.yml)
-(at the repo root, scoped to this folder via a `paths:` filter) runs on every
+[`ci.yml`](.github/workflows/ci.yml)
+runs on every
 push and pull request to `main`: a `backend` job installs `requirements.txt` and
 runs the full smoke suite above, and a `frontend` job installs with `npm ci`
 and runs `npm run build` (TypeScript + Vite). Both LSTM checkpoints

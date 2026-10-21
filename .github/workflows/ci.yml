@@ -1,14 +1,10 @@
-name: TensorFlow-PyTorch-Forecasting-Dashboard CI
+name: CI
 
 on:
   push:
     branches: ["main"]
-    paths:
-      - "TensorFlow-PyTorch-Forecasting-Dashboard/**"
   pull_request:
     branches: ["main"]
-    paths:
-      - "TensorFlow-PyTorch-Forecasting-Dashboard/**"
 
 jobs:
   backend:
@@ -16,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: TensorFlow-PyTorch-Forecasting-Dashboard/backend
+        working-directory: backend
     steps:
       - uses: actions/checkout@v4
 
@@ -24,7 +20,7 @@ jobs:
         with:
           python-version: "3.12"
           cache: "pip"
-          cache-dependency-path: TensorFlow-PyTorch-Forecasting-Dashboard/backend/requirements.txt
+          cache-dependency-path: backend/requirements.txt
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -37,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: TensorFlow-PyTorch-Forecasting-Dashboard/frontend
+        working-directory: frontend
     steps:
       - uses: actions/checkout@v4
 
@@ -45,7 +41,7 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-          cache-dependency-path: TensorFlow-PyTorch-Forecasting-Dashboard/frontend/package-lock.json
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
         run: npm ci
